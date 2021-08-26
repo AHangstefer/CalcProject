@@ -55,6 +55,15 @@ function calculateInput($userInput){
                    $current = $current / 100;
                    $current = $current * $arr[$i];
                 }
+                if($action == ")"){
+                   for($j=0; $j<= $i; $j++){
+                     if(arr[$j] == "("){
+                       $current = calculateInput($input);
+                     }
+
+
+                   }
+                }
 
                 $action = null;
             }else{
@@ -113,13 +122,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   <p>Hello Little Calculator</p>
   <div>
       <form method = "post">
-      <input name = "input" value='<?php echo json_encode($input);?>'/>
+      <input type="hidden"  name = "input" value='<?php echo json_encode($input);?>'/>
       <p style="padding: 2rem; margin: 0; height: 1rem;"><?php echo getInputAsString($input);?></p>
       <input type = "text" value="<?php echo $currentValue;?>"/>
       <table>
         <tr>
-          <td><input type = "submit" name="closing" value = ")" /></td>
-          <td><input type = "submit" name="opening" value = "(" /></td>
+          <td><input type = "submit" name="closing" value = "(" /></td>
+          <td><input type = "submit" name="opening" value = ")" /></td>
           <td><button type = "submit" name="percent" value = "%" /> % </button></td>
           <td><button type = "submit" name="AC" value = "AC" /> AC </button></td>
         </tr>

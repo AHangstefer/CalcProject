@@ -2,6 +2,12 @@ body{
   background-color: white;
 }
 
-p{
-  color: red;
+input{
+  width: 5rem;
+  height: 2rem;
+}
+
+button{
+  width: 5rem;
+  height: 2rem;
 }
