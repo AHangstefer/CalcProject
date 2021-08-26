@@ -119,42 +119,41 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <p>Hello Little Calculator</p>
   <div>
       <form method = "post">
       <input type="hidden"  name = "input" value='<?php echo json_encode($input);?>'/>
       <p style="padding: 2rem; margin: 0; height: 1rem;"><?php echo getInputAsString($input);?></p>
-      <input type = "text" value="<?php echo $currentValue;?>"/>
+      <input id="display" type = "text" value="<?php echo $currentValue;?>"/>
       <table>
         <tr>
-          <td><input type = "submit" name="closing" value = "(" /></td>
-          <td><input type = "submit" name="opening" value = ")" /></td>
-          <td><button type = "submit" name="percent" value = "%" /> % </button></td>
-          <td><button type = "submit" name="AC" value = "AC" /> AC </button></td>
+          <td><input class = "top" type = "submit" name="closing" value = "(" /></td>
+          <td><input class = "top" type = "submit" name="opening" value = ")" /></td>
+          <td><button class = "top" type = "submit" name="percent" value = "%" /> % </button></td>
+          <td><button class = "top" type = "submit" name="AC" value = "AC" /> AC </button></td>
         </tr>
         <tr>
           <td><input type = "submit" name= "7" value = "7" /></td>
           <td><input type = "submit" name="8" value = "8" /></td>
           <td><input type = "submit" name="9" value = "9" /></td>
-          <td><button type = "submit" name="divide" value = "÷" /> &#247; </button></td>
+          <td><button class = "outside" type = "submit" name="divide" value = "÷" /> &#247; </button></td>
         </tr>
         <tr>
           <td><input type = "submit" name="4" value = "4" /></td>
           <td><input type = "submit" name="5" value = "5" /></td>
           <td><input type = "submit" name="6" value = "6" /></td>
-          <td><button type = "submit" name="multiply" value = "x" /> x </button></td>
+          <td><button class = "outside" type = "submit" name="multiply" value = "x" /> x </button></td>
         </tr>
         <tr>
           <td><input type = "submit" name="1" value ="1" /></td>
           <td><input type = "submit" name="2" value ="2" /></td>
           <td><input type = "submit" name="3" value ="3" /></td>
-          <td><button type = "submit" name="minus" value = "-" /> - </button></td>
+          <td><button class = "outside" type = "submit" name="minus" value = "-" /> - </button></td>
         </tr>
         <tr>
           <td><input type = "submit" name="zero" value = "0" /></td>
           <td><input type = "submit" name="dot" value = "." /></td>
-          <td><button type = "submit" name="equal" value = "=" /> = </button></td>
-          <td><button type = "submit" name="add" value = "+" /> + </button></td>
+          <td><button id = "submit" type = "submit" name="equal" value = "=" /> = </button></td>
+          <td><button class = "outside" type = "submit" name="add" value = "+" /> + </button></td>
         </tr>
 
       </table>

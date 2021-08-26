@@ -1,13 +1,47 @@
-body{
-  background-color: white;
-}
+
+
+
+div{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  }
+
 
 input{
   width: 5rem;
   height: 2rem;
+  border-radius: .2rem;
+  border-style: none;
+
+
+
 }
 
 button{
   width: 5rem;
   height: 2rem;
+  border-radius: .2rem;
+  border-style: none;
+
+}
+
+.top{
+  background-color: lightgrey;
+  height: 1.8rem;
+
+}
+
+.outside{
+  background-color: lightgrey;
+
+}
+
+#submit{
+  background-color: lightblue;
+
+}
+
+#display{
+  width: 20rem;
 }
