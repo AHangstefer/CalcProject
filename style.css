@@ -45,3 +45,10 @@ button{
 #display{
   width: 20rem;
 }
+
+/* #canvas{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  }
+} */

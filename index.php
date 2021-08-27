@@ -1,8 +1,10 @@
+
 <?php
 
 $currentValue = 0;
 
 $input = [];
+
 
 function getInputAsString($values){
     $o = "";
@@ -11,6 +13,8 @@ function getInputAsString($values){
     }
     return $o;
 }
+
+
 
 function calculateInput($userInput){
   //formats user input
@@ -39,6 +43,7 @@ function calculateInput($userInput){
     for($i=0; $i<= count($arr)-1; $i++){
         if(is_numeric($arr[$i])){
             if($action){
+
                 if($action == "+"){
                     $current = $current + $arr[$i];
                 }
@@ -55,15 +60,7 @@ function calculateInput($userInput){
                    $current = $current / 100;
                    $current = $current * $arr[$i];
                 }
-                if($action == ")"){
-                   for($j=0; $j<= $i; $j++){
-                     if(arr[$j] == "("){
-                       $current = calculateInput($input);
-                     }
 
-
-                   }
-                }
 
                 $action = null;
             }else{
@@ -117,8 +114,16 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 <head>
 	<title>Little Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <script src="confetti.js"></script>
 </head>
 <body>
+<p>
+  <?php if($currentValue == 1985):?>
+    <?php header('Refresh:1'); ?>
+    <canvas id = "confetti"></canvas>
+  <?php endif ?>
+</p>
+
   <div>
       <form method = "post">
       <input type="hidden"  name = "input" value='<?php echo json_encode($input);?>'/>
@@ -159,7 +164,6 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
       </table>
   </form>
 </div>
-
 
 
 </body>
