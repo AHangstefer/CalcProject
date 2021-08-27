@@ -118,7 +118,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 </head>
 <body>
 <p>
-  <?php if($currentValue == 1985):?>
+  <?php if($currentValue == 1982):?>
     <?php header('Refresh:1'); ?>
     <canvas id = "confetti"></canvas>
   <?php endif ?>
